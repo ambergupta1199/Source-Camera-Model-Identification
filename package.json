@@ -2,7 +2,7 @@
   "name": "scmi-dashboard",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/ambergupta1199/Source-Camera-Model-Identification",
+  "homepage": "https://ambergupta1199.github.io/Source-Camera-Model-Identification",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",

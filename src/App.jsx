@@ -22,6 +22,8 @@ function App() {
       ],
       FedNova_Prox: [
         { method: "Chen et al. ", pla: "", ila: "22.86" },
+        { method: "Sychandran et al. ", pla: "8.47", ila: "8.30" },
+        { method: "Liu et al. ", pla: "40.64", ila: "59.51" },
         { method: "Rana et al. ", pla: "62.94", ila: "78.92" },
         { method: "Huan et al. ", pla: "15.63", ila: "24.52" },
         { method: "FedFFTNet et al.", pla: "71.19", ila: "85.44" },
@@ -35,8 +37,10 @@ function App() {
       ],
       FedNova_Prox: [
         { method: "Chen et al. ", pla: "", ila: "66.85" },
+        { method: "Sychandran et al. ", pla: "", ila: "" },
+        { method: "Liu et al. ", pla: "", ila: "" },
         { method: "Rana et al. ", pla: "68.03", ila: "78.66" },
-        { method: "Huan et al. ", pla: "15.63", ila: "24.52" },
+        { method: "Huan et al. ", pla: "", ila: "" },
         { method: "FedFFTNet et al.", pla: "75.74", ila: "84.49" },
         { method: "Proposed", pla: "70.86", ila: "85.21" },
       ],
