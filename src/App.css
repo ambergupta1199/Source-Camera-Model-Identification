@@ -5,23 +5,38 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
   overflow-x: hidden;
 }
 
 .app-container {
   min-height: 100vh;
   position: relative;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+  background: linear-gradient(
+    135deg,
+    #667eea 0%,
+    #764ba2 25%,
+    #f093fb 50%,
+    #4facfe 75%,
+    #00f2fe 100%
+  );
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
   padding: 2rem;
+  overflow: auto;
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .background-animation {
@@ -30,17 +45,113 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 119, 255, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(79, 172, 254, 0.3) 0%, transparent 50%);
+  background: radial-gradient(
+      circle at 20% 80%,
+      rgba(120, 119, 198, 0.3) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 119, 255, 0.3) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 40%,
+      rgba(79, 172, 254, 0.3) 0%,
+      transparent 50%
+    );
   animation: backgroundPulse 10s ease-in-out infinite;
   pointer-events: none;
 }
 
 @keyframes backgroundPulse {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.1); }
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+/* Zoom Controls - Fixed position, not affected by content zoom */
+.zoom-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  animation: zoomControlFadeIn 0.5s ease-out;
+}
+
+@keyframes zoomControlFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.zoom-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.zoom-btn:hover:not(:disabled) {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.5);
+}
+
+.zoom-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.zoom-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);
+}
+
+.zoom-display {
+  min-width: 60px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #1e293b;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.zoom-display:hover {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
 }
 
 .content-wrapper {
@@ -48,6 +159,8 @@ body {
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  transition: transform 0.3s ease;
+  will-change: transform;
 }
 
 .header {
@@ -86,8 +199,13 @@ body {
 }
 
 @keyframes titleFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .title-underline {
@@ -98,8 +216,13 @@ body {
 }
 
 @keyframes underlineExpand {
-  from { width: 0; margin: 0 auto; }
-  to { width: 100%; }
+  from {
+    width: 0;
+    margin: 0 auto;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 /* Grid layout for two filters */
@@ -158,8 +281,13 @@ body {
 }
 
 @keyframes iconBounce {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 .select-wrapper {
@@ -207,8 +335,13 @@ body {
 }
 
 @keyframes arrowBounce {
-  0%, 100% { transform: translateY(-50%); }
-  50% { transform: translateY(-40%); }
+  0%,
+  100% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(-40%);
+  }
 }
 
 .table-container {
@@ -257,8 +390,13 @@ body {
 }
 
 @keyframes badgePulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 .badge-highlight {
@@ -279,7 +417,11 @@ body {
 }
 
 .results-table thead {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.9) 0%,
+    rgba(118, 75, 162, 0.9) 100%
+  );
 }
 
 .results-table th {
@@ -305,9 +447,16 @@ body {
 }
 
 @keyframes iconRotate {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-10deg); }
-  75% { transform: rotate(10deg); }
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
 }
 
 .results-table tbody tr {
@@ -381,7 +530,9 @@ body {
 }
 
 @keyframes barExpand {
-  from { width: 0 !important; }
+  from {
+    width: 0 !important;
+  }
 }
 
 .floating-particles {
@@ -475,5 +626,22 @@ body {
 
   .badges-row {
     flex-direction: column;
+  }
+
+  .zoom-controls {
+    top: 10px;
+    right: 10px;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .zoom-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1.3rem;
+  }
+
+  .zoom-display {
+    min-width: 50px;
+    font-size: 0.9rem;
   }
 }

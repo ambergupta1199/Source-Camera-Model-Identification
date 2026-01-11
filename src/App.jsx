@@ -4,6 +4,7 @@ import "./App.css";
 function App() {
   const [selectedDataset, setSelectedDataset] = useState("Forchheim");
   const [selectedAlgorithm, setSelectedAlgorithm] = useState("FedAvg");
+  const [zoomLevel, setZoomLevel] = useState(100);
 
   const datasets = ["Forchheim", "Vision", "Dresden", "Socrates"];
   const algorithms = ["FedAvg", "FedNova_Prox"];
@@ -75,11 +76,57 @@ function App() {
   // Get data for currently selected dataset and algorithm
   const tableData = datasetResults[selectedDataset][selectedAlgorithm];
 
+  const handleZoomIn = () => {
+    setZoomLevel((prev) => Math.min(prev + 10, 200));
+  };
+
+  const handleZoomOut = () => {
+    setZoomLevel((prev) => Math.max(prev - 10, 50));
+  };
+
+  const handleZoomReset = () => {
+    setZoomLevel(100);
+  };
+
   return (
     <div className="app-container">
       <div className="background-animation"></div>
 
-      <div className="content-wrapper">
+      {/* Zoom Controls - Fixed position, not affected by zoom */}
+      <div className="zoom-controls">
+        <button
+          onClick={handleZoomOut}
+          className="zoom-btn"
+          disabled={zoomLevel <= 50}
+          title="Zoom Out"
+        >
+          −
+        </button>
+        <span
+          className="zoom-display"
+          onClick={handleZoomReset}
+          title="Click to reset"
+        >
+          {zoomLevel}%
+        </span>
+        <button
+          onClick={handleZoomIn}
+          className="zoom-btn"
+          disabled={zoomLevel >= 200}
+          title="Zoom In"
+        >
+          +
+        </button>
+      </div>
+
+      {/* Content wrapper - This is what gets zoomed */}
+      <div
+        className="content-wrapper"
+        style={{
+          transform: `scale(${zoomLevel / 100})`,
+          transformOrigin: "top center",
+        }}
+      >
         <header className="header">
           <div className="title-container">
             <h1 className="main-title">Source Camera Model Identification</h1>
