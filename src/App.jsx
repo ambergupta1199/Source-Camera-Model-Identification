@@ -21,11 +21,14 @@ function App() {
         { method: "FedFFTNet et al.", pla: "56.53", ila: "67.56" },
       ],
       FedNova_Prox: [
-        { method: "Chen et al. ", pla: "", ila: "22.86" },
-        { method: "Sychandran et al. ", pla: "8.47", ila: "8.30" },
+        { method: "Bennabhakula et al. ", pla: "", ila: "" },
         { method: "Liu et al. ", pla: "40.64", ila: "59.51" },
-        { method: "Rana et al. ", pla: "62.94", ila: "78.92" },
+        { method: "Chen et al. ", pla: "", ila: "22.86" },
         { method: "Huan et al. ", pla: "15.63", ila: "24.52" },
+        { method: "Sychandran et al. ", pla: "8.47", ila: "8.30" },
+
+        { method: "Rana et al. ", pla: "62.94", ila: "78.92" },
+
         { method: "FedFFTNet et al.", pla: "71.19", ila: "85.44" },
         { method: "Proposed", pla: "74.63", ila: "90.42" },
       ],
@@ -36,11 +39,12 @@ function App() {
         // { method: "ResNet-50 Fine-tuned", pla: "93.5", ila: "91.2" },
       ],
       FedNova_Prox: [
-        { method: "Chen et al. ", pla: "", ila: "66.85" },
-        { method: "Sychandran et al. ", pla: "13.89", ila: "13.95" },
         { method: "Liu et al. ", pla: "44.78", ila: "62.83" },
-        { method: "Rana et al. ", pla: "68.03", ila: "78.66" },
+        { method: "Chen et al. ", pla: "", ila: "66.85" },
         { method: "Huan et al. ", pla: "33.83", ila: "43.20" },
+        { method: "Sychandran et al. ", pla: "13.89", ila: "13.95" },
+        { method: "Rana et al. ", pla: "68.03", ila: "78.66" },
+
         { method: "FedFFTNet et al.", pla: "75.74", ila: "84.49" },
         { method: "Proposed", pla: "70.86", ila: "85.21" },
       ],
