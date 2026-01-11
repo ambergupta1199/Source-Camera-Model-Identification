@@ -37,10 +37,10 @@ function App() {
       ],
       FedNova_Prox: [
         { method: "Chen et al. ", pla: "", ila: "66.85" },
-        { method: "Sychandran et al. ", pla: "", ila: "" },
-        { method: "Liu et al. ", pla: "", ila: "" },
+        { method: "Sychandran et al. ", pla: "13.89", ila: "13.95" },
+        { method: "Liu et al. ", pla: "44.78", ila: "62.83" },
         { method: "Rana et al. ", pla: "68.03", ila: "78.66" },
-        { method: "Huan et al. ", pla: "", ila: "" },
+        { method: "Huan et al. ", pla: "33.83", ila: "43.20" },
         { method: "FedFFTNet et al.", pla: "75.74", ila: "84.49" },
         { method: "Proposed", pla: "70.86", ila: "85.21" },
       ],
