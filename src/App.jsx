@@ -77,11 +77,11 @@ function App() {
   const tableData = datasetResults[selectedDataset][selectedAlgorithm];
 
   const handleZoomIn = () => {
-    setZoomLevel((prev) => Math.min(prev + 10, 200));
+    setZoomLevel((prev) => Math.min(prev + 10, 150));
   };
 
   const handleZoomOut = () => {
-    setZoomLevel((prev) => Math.max(prev - 10, 50));
+    setZoomLevel((prev) => Math.max(prev - 10, 30));
   };
 
   const handleZoomReset = () => {
