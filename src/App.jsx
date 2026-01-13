@@ -38,7 +38,7 @@ function App() {
         // { method: "ResNet-50 Fine-tuned", pla: "93.5", ila: "91.2" },
       ],
       FedNova_Prox: [
-        { method: "Bennabhakula et al. ", pla: "", ila: "" },
+        { method: "Bennabhakula et al. ", pla: "46.36", ila: "58.03" },
         { method: "Liu et al. ", pla: "44.78", ila: "62.83" },
         { method: "Chen et al. ", pla: "", ila: "66.85" },
         { method: "Huan et al. ", pla: "33.83", ila: "43.20" },
