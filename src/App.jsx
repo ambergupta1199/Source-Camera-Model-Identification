@@ -6,7 +6,15 @@ function App() {
   const [selectedAlgorithm, setSelectedAlgorithm] = useState("FedAvg");
   const [zoomLevel, setZoomLevel] = useState(100);
 
-  const datasets = ["Forchheim", "Vision", "Dresden", "Socrates"];
+  const datasets = [
+    "Forchheim",
+    "Vision",
+    "Dresden",
+    "Socrates",
+    "FloreView",
+    "UNIFI",
+    "IMAGINE",
+  ];
   const algorithms = ["FedAvg", "FedNova_Prox"];
 
   // Dataset and Algorithm specific results - MODIFY THESE VALUES
@@ -29,6 +37,7 @@ function App() {
         { method: "Sychandran et al. ", pla: "8.47", ila: "8.30" },
         { method: "Rana et al. ", pla: "62.94", ila: "78.92" },
         { method: "Rejoy et al.", pla: "71.19", ila: "85.44" },
+        { method: "Omar et al.", pla: "", ila: "10.85" },
         { method: "Proposed", pla: "74.63", ila: "90.42" },
       ],
     },
@@ -46,6 +55,7 @@ function App() {
         { method: "Rana et al. ", pla: "68.03", ila: "78.66" },
 
         { method: "Rejoy et al.", pla: "75.74", ila: "84.49" },
+        { method: "Omar et al.", pla: "", ila: "17.81" },
         { method: "Proposed", pla: "70.86", ila: "85.21" },
       ],
     },
@@ -60,6 +70,39 @@ function App() {
       ],
     },
     Socrates: {
+      FedAvg: [
+        // { method: "CNN-Based Approach", pla: "89.7", ila: "86.4" },
+        // { method: "ResNet-50 Fine-tuned", pla: "92.1", ila: "89.8" },
+      ],
+      FedNova_Prox: [
+        // { method: "Bennabhakula et al. ", pla: "46.36", ila: "58.03" },
+        // { method: "Liu et al. ", pla: "44.78", ila: "62.83" },
+        // { method: "Rejoy et al.", pla: "71.19", ila: "85.44" },
+      ],
+    },
+    FloreView: {
+      FedAvg: [
+        // { method: "CNN-Based Approach", pla: "89.7", ila: "86.4" },
+        // { method: "ResNet-50 Fine-tuned", pla: "92.1", ila: "89.8" },
+      ],
+      FedNova_Prox: [
+        { method: "Bennabhakula et al. ", pla: "22.95", ila: "29.80" },
+        { method: "Liu et al. ", pla: "16.66", ila: "24.31" },
+        { method: "Rejoy et al.", pla: "52.77", ila: "68.70" },
+      ],
+    },
+    UNIFI: {
+      FedAvg: [
+        // { method: "CNN-Based Approach", pla: "89.7", ila: "86.4" },
+        // { method: "ResNet-50 Fine-tuned", pla: "92.1", ila: "89.8" },
+      ],
+      FedNova_Prox: [
+        // { method: "Bennabhakula et al. ", pla: "46.36", ila: "58.03" },
+        // { method: "Liu et al. ", pla: "44.78", ila: "62.83" },
+        // { method: "Rejoy et al.", pla: "71.19", ila: "85.44" },
+      ],
+    },
+    IMAGINE: {
       FedAvg: [
         // { method: "CNN-Based Approach", pla: "89.7", ila: "86.4" },
         // { method: "ResNet-50 Fine-tuned", pla: "92.1", ila: "89.8" },
