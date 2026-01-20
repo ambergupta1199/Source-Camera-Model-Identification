@@ -89,6 +89,8 @@ function App() {
         { method: "Bennabhakula et al. ", pla: "22.95", ila: "29.80" },
         { method: "Liu et al. ", pla: "16.66", ila: "24.31" },
         { method: "Rejoy et al.", pla: "52.77", ila: "68.70" },
+        { method: "Omar et al.", pla: "", ila: "11.27" },
+        { method: "Proposed", pla: "60.19", ila: "77.74" },
       ],
     },
     UNIFI: {
